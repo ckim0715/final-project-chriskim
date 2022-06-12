@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  
+  
 }
 
 .App-logo {
@@ -36,3 +37,123 @@
     transform: rotate(360deg);
   }
 }
+
+#links-container{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  grid-column-start:1;
+  grid-column-end:1;
+
+}
+
+img.display-image{
+  
+  width: 150px;
+  height: 150px;
+  
+  
+
+}
+
+div.product-container{
+  display:flex;
+  flex-direction: column;
+  width: 15vw;
+  height: 42vh;
+  border: solid .5px rgb(159, 159, 159);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+  
+}
+
+div#products-container-wrapper{
+  display:grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+
+}
+
+div#products-display{
+  display:flex;
+  flex-wrap: wrap;
+  grid-column-start:2;
+  grid-column-end:6;
+  
+}
+
+div.product-container > p {
+  margin-top: .5vh;
+  margin-bottom: .5vh;
+  
+}
+
+.modal-background{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.modal-container {
+  width: 75vw;
+  height: 80vh;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.modal-container .title{
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.modal-close-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-btn button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+.modal-container .body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  text-align: center;
+}
+
+#modal-image{
+  width: 100px;
+  height: 100px
+}
+
+.modal-text{
+  margin-top: .5vh;
+  margin-bottom: .5vh;
+}
+
+
+
+
