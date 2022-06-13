@@ -32,12 +32,16 @@ function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProdu
             <img id="modal-image" src= {productObj.image_url} alt="Image of Product"></img>
             <p className="modal-text">{productObj.brand}</p>
             <p className="modal-text">{productObj.model}</p>
-            <p className="modal-text">Starting Bid: ${productObj.starting_bid}</p>
-            <p className="modal-text">Current Bid: {productObj.current_bid ? `$${productObj.current_bid}` : "No Bids"}</p>
-            <p className="modal-text">Buy Now: ${productObj.buy_price}</p>
+            <p className="modal-text"><u>Starting Bid</u>: <strong>${productObj.starting_bid}</strong></p>
+            <p className="modal-text"><u>Current Bid</u>: {productObj.current_bid ? <strong>${productObj.current_bid}</strong> : <strong>No Bids</strong>}</p>
+            <p className="modal-text"><u>Buy Now</u>: <strong>${productObj.buy_price}</strong></p>
             <p className="modal-text">{productObj.message}</p>
+            <div id="btn-container">
             <button onClick={bidToggle}>Place Bid</button>
+            
+            
             <button onClick={buyToggle}>Buy Now</button>
+            </div>
 
             {showBidForm? <BidForm setProductObj={setProductObj} productObj={productObj}  /> : null}
             {showBuyForm? <BuyForm setToggleModal={setToggleModal} setProductObj={setProductObj} productObj={productObj} handleDeleteProduct={handleDeleteProduct}  /> : null}

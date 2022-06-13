@@ -8,6 +8,16 @@ class ProductsController < ApplicationController
         end
     end
 
+    def show
+        products = Product.where(user_id: session[:user_id])
+        if products
+            render json: products
+        else 
+            render json: { error: "No Current Listings" }, status: :not_found
+        end
+    end
+
+
     def pc
         pc = Product.where(part_type: "PC")
         render json: pc, include: :bids

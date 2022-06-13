@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
     belongs_to :user
-    has_many :bids
+    has_many :bids, dependent: :destroy
 
     validates :part_type, presence: true
     validates :brand, presence: true

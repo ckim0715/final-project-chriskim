@@ -21,9 +21,12 @@ Rails.application.routes.draw do
   get "/product/storage", to: "products#storage"
   get "/product/powersupply", to: "products#power_supply"
   get "/product/other", to: "products#other"
+  get "/product", to: "products#show"
   delete "product/:id", to: "products#destroy"
 
   post "/bid", to: "bids#create"
+  get "/bid", to: "bids#show"
+  delete "/bid/:id", to: "bids#destroy"
 
 
   # Routing logic: fallback requests for React Router.

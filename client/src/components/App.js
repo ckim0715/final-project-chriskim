@@ -29,14 +29,14 @@ console.log(user)
     
   <div className ="App">
 
-    
-   {user? <Navbar user={user} setUser={setUser} /> : null}
-    
+    <div id="navbar-container">
+   {user? <Navbar id="navbar" user={user} setUser={setUser} /> : null}
+    </div>
     <Routes>
       <Route path='/' element ={<Home user={user} setUser={setUser} />} />
       <Route path='/browse' element ={<Browse user={user} />} />
       <Route path='/about' element ={<About />} />
-      <Route path='/account' element ={<Account />} />
+      <Route path='/account' element ={<Account user={user} setUser={setUser} />} />
       <Route path='/sell' element ={<Sell user={user} setUser={setUser} />} />
       <Route path='/signup' element ={<Signup user={user} setUser={setUser} />} />
       

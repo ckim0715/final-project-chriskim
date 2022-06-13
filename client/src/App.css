@@ -1,4 +1,5 @@
 .App {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   
   
 }
@@ -65,15 +66,24 @@ div.product-container{
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-right: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
 
 
   
 }
 
+
+
 div#products-container-wrapper{
   display:grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 20% 20% 20% 20% 20%;
+  border-top: solid 1px grey;
+
+
 
 }
 
@@ -82,6 +92,7 @@ div#products-display{
   flex-wrap: wrap;
   grid-column-start:2;
   grid-column-end:6;
+  margin-top: 40px;
   
 }
 
@@ -115,6 +126,9 @@ div.product-container > p {
   display: flex;
   flex-direction: column;
   padding: 25px;
+  align-items: center;
+  
+  
 }
 
 .modal-container .title{
@@ -133,6 +147,8 @@ div.product-container > p {
   border: none;
   font-size: 25px;
   cursor: pointer;
+  margin-left: 75vw;
+  
 }
 
 
@@ -145,14 +161,127 @@ div.product-container > p {
 }
 
 #modal-image{
-  width: 100px;
-  height: 100px
+  width: 150px;
+  height: 150px
 }
 
 .modal-text{
   margin-top: .5vh;
   margin-bottom: .5vh;
 }
+
+.table-image {
+  width: 150px;
+  height: 150px;
+}
+
+#about-wrapper{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20;
+  border-top: solid 1px grey
+ 
+  
+  
+}
+
+#mission-statement-container{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: block;
+  padding-left: 30px;
+  padding-top: 100px;
+  
+  
+
+}
+
+#about-image-container{
+  grid-column-start: 4;
+  grid-column-end: 6;
+  padding-left: 20px;
+  margin-top: 30px;
+}
+
+#about-image {
+  width: 300px;
+  height: 400px
+}
+
+#navbar-container{
+  display:flex;
+  justify-content: flex-end;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px
+
+}
+
+nav > a{
+  padding-bottom: 0px;
+  margin-left: 30px;
+  margin-bottom: 0px;
+  text-decoration: none;
+  color: rgb(91, 90, 90)
+}
+
+nav > button {
+  margin-left: 30px;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+
+}
+
+#about-header {
+  font-size: 40px;
+  text-decoration: underline;
+
+}
+
+#links-container {
+  margin-top: 20px
+}
+
+#links-container > a {
+  padding-left: 30px;
+  padding-top: 10px;
+  margin-top: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+
+  
+}
+
+#links-container > a:visited{
+  text-decoration: none;
+  color: black;
+}
+
+#btn-container {
+ margin-top: 10px;
+  display:flex;
+  flex-direction: row;
+  
+}
+
+#btn-container > button{
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
 
 
 

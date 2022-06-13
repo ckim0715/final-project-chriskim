@@ -57,7 +57,7 @@ function Browse({user}) {
     }
 
     function handleDeleteProduct (deletedProduct) {
-        const newProductArray = productDisplay.filter ((product) => product.id != deletedProduct.id)
+        const newProductArray = productDisplay.filter ((product) => product.id !== deletedProduct.id)
         setProductDisplay(newProductArray)
 
     }
@@ -66,7 +66,6 @@ function Browse({user}) {
 
     return (
         <>
-        <h1>Browse Page</h1>
         <div id="products-container-wrapper">
         <div id="links-container">
         <a href="#" onClick={fetchPc}>PCs</a>
