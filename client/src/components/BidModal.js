@@ -28,19 +28,23 @@ function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProdu
                 <div className="modal-close-btn">
                 <button onClick={() => setToggleModal(false)}> X </button>
                 </div>
-            <div className="body"></div>
+                        
             <img id="modal-image" src= {productObj.image_url} alt="Image of Product"></img>
-            <p className="modal-text">{productObj.brand}</p>
+            <div id="modal-text-container">
+            <p id ="modal-brand-text" className="modal-text">{productObj.brand}</p>
             <p className="modal-text">{productObj.model}</p>
             <p className="modal-text"><u>Starting Bid</u>: <strong>${productObj.starting_bid}</strong></p>
             <p className="modal-text"><u>Current Bid</u>: {productObj.current_bid ? <strong>${productObj.current_bid}</strong> : <strong>No Bids</strong>}</p>
             <p className="modal-text"><u>Buy Now</u>: <strong>${productObj.buy_price}</strong></p>
-            <p className="modal-text">{productObj.message}</p>
-            <div id="btn-container">
-            <button onClick={bidToggle}>Place Bid</button>
+            </div>
+            <div id="modal-description">
+            <p>{productObj.message}</p>
+            </div>
+            <div id="modal-btn-container">
+            <button id="bid-button" onClick={bidToggle}>Place Bid</button>
             
             
-            <button onClick={buyToggle}>Buy Now</button>
+            <button id="buy-button" onClick={buyToggle}>Buy Now</button>
             </div>
 
             {showBidForm? <BidForm setProductObj={setProductObj} productObj={productObj}  /> : null}

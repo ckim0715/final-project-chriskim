@@ -42,7 +42,7 @@
 #links-container{
   display: flex;
   flex-direction: column;
-  width: 100px;
+  width: 20vw;
   grid-column-start:1;
   grid-column-end:1;
 
@@ -118,28 +118,25 @@ div.product-container > p {
 }
 
 .modal-container {
-  width: 75vw;
+  width: 60vw;
   height: 80vh;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  flex-direction: column;
   padding: 25px;
   align-items: center;
+  display:grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
   
   
-}
-
-.modal-container .title{
-  display: inline-block;
-  text-align: center;
-  margin-top: 10px;
 }
 
 .modal-close-btn {
-  display: flex;
-  justify-content: flex-end;
+  grid-column-start: 9;
+  grid-row-start: 1;
+  margin-left: 10vw;
+  margin-bottom: 7vh;
 }
 
 .modal-close-btn button {
@@ -147,28 +144,37 @@ div.product-container > p {
   border: none;
   font-size: 25px;
   cursor: pointer;
-  margin-left: 75vw;
+  
   
 }
 
-
-.modal-container .body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
-  text-align: center;
+#modal-text-container{
+  grid-column-start: 5;
+  grid-row-start: 4;
+  display:flex;
+  flex-direction: column;
+  width: 7vw
+  
+  
 }
 
+#modal-brand-text{
+  margin-top: 30px;
+}
+
+
 #modal-image{
-  width: 150px;
-  height: 150px
+  grid-column-start: 0;
+  grid-row-start: 4;
+  width: 300px;
+  height: 400px
 }
 
 .modal-text{
-  margin-top: .5vh;
-  margin-bottom: .5vh;
+  margin-top: 0px
 }
+
+
 
 .table-image {
   width: 150px;
@@ -180,9 +186,16 @@ div.product-container > p {
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 20% 20% 20% 20% 20;
   border-top: solid 1px grey
- 
+
   
-  
+}
+
+#modal-description{
+  grid-column-start:0;
+  grid-row-start: 8;
+  display:block;
+  width: 30vw;
+  margin-top: 30px
 }
 
 #mission-statement-container{
@@ -261,24 +274,255 @@ nav > button {
   color: black;
 }
 
-#btn-container {
- margin-top: 10px;
-  display:flex;
-  flex-direction: row;
+#modal-btn-container {
+ grid-column-start: 1;
+ grid-row-start: 10;
+ display:flex;
+ flex-direction: row;
+ width: 400px;
+
   
 }
 
-#btn-container > button{
-  background-color: transparent;
+#modal-btn-container > button{
   border-radius: 20px;
   padding: 10px 10px;
   cursor: pointer;
+  width: 100px;
+  height: 50px;
+}
+
+#bid-button{
+  margin-left: 3vw;
+  background-color: transparent;
+}
+
+#bid-button:focus{
+  margin-left: 3vw;
+  background-color: green;
+  color: white;
+}
+
+#buy-button{
+  margin-left: 2vw;
+  background-color: transparent;
+  
+}
+
+#buy-button:focus{
+  margin-left: 2vw;
+  background-color: green;
+  color: white
+
+}
+
+#bid-form-container{
+  grid-column-start: 7;
+  grid-row-start: 5;
+  width: 20vw;
+}
+
+#bid-input-container{
+  
+  margin-bottom: 5vh;
+  margin-top: 4vh;
+  padding-top: 0px;
+  font-size: 30px;
+
+
+}
+
+#bid-input{
+  height: 30px;
+  width: 150px;
+  font-size: 20px;
+  margin-left: .5vw;
+}
+
+#bidform-cc-text{
+  display:flex;
+  flex-direction: column;
+  
+
+}
+
+#bid-cc-input{
+  width: 200px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+
+}
+
+.cc-exp{
+  width: 30px
+}
+
+#bid-yy-cc{
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+#bid-mm-cc{
+  margin-right: 5px;
+}
+
+#bid-cc-cvv{
+  width: 40px;
+}
+
+#bidform-billing-text{
+  margin-top: 20px;
+  display:flex;
+  flex-direction: column;
+  
+ 
+}
+
+#bid-firstname{
+  width: 200px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+  
+}
+
+#bid-lastname{
+  width: 200px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+}
+
+#bid-address{
+  width: 250px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+}
+
+#bid-city{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+
+}
+
+#bid-state{
+  margin-bottom: 5px;
+  margin-top: 2px;
+  height: 20px;
+  width: 100px;
+}
+
+#bid-zip{
+  margin-bottom: 5px;
+  margin-top: 2px;
+  height: 20px;
+  width: 50px;
+  margin-left: 5px
+}
+
+#buy-form-container{
+  grid-column-start: 7;
+  grid-row-start: 6;
+  width: 20vw;
+  margin-bottom: 1vh
+
+}
+
+#buyform-cc-text{
+  display:flex;
+  flex-direction: column;
+  
+
+}
+
+#buy-cc-input{
+  width: 200px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+
+}
+
+.cc-exp{
+  width: 30px
+}
+
+#buy-yy-cc{
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+#buy-mm-cc{
+  margin-right: 5px;
+}
+
+#buy-cc-cvv{
+  width: 40px;
+}
+
+#buyform-billing-text{
+  margin-top: 20px;
+  display:flex;
+  flex-direction: column;
+  
+ 
+}
+
+#buy-firstname{
+  width: 200px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+  
+}
+
+#buy-lastname{
+  width: 200px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+}
+
+#buy-address{
+  width: 250px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+}
+
+#buy-city{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 20px;
+
+}
+
+#buy-state{
+  margin-bottom: 5px;
+  margin-top: 2px;
+  height: 20px;
+  width: 100px;
 }
 
 
+#buy-zip{
+  margin-bottom: 5px;
+  margin-top: 2px;
+  height: 20px;
+  width: 50px;
+  margin-left: 5px
+}
 
-
-
+.cc-submit-btn{
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: black;
+  color:white;
+}
 
 
 
