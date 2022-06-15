@@ -51,11 +51,12 @@ function SellForm () {
      }
     
     return (
-        <div>
+        <div id="sellform-container">
         {console.log(product)}
         <form onSubmit={(e) => handleSubmitForm(e)}>
+            <div id="type-selector-container">
             <label>
-            <select defaultValue={"Default"} name="part_type" onChange={(e) =>handleSetForm(e)}>
+            <select id="type-selector" defaultValue={"Default"} name="part_type" onChange={(e) =>handleSetForm(e)}>
                 <option value="Default" disabled>Select Part Type</option>
                 <option>PC</option>
                 <option>Motherboard</option>
@@ -67,36 +68,45 @@ function SellForm () {
                 <option>Other</option>
             </select>    
             </label>
-
-            <label>Brand:
-                <input
+            </div>
+        
+            <div id="brand-container">
+            <p>Brand:</p>
+                <input id="brand-input"
                 type= "text" 
                 name= "brand"
+                placeholder="Enter Brand"
                 autoComplete= "off"
                 onChange={(e) =>handleSetForm(e)}
                 />
-            </label>
-
-            <label>Model:
+            
+            </div>
+            <div id="model-container">
+            <p>Model:</p>
                 <input
+                id="model-input"
                 type= "text" 
                 name= "model"
+                placeholder="Enter Model"
                 autoComplete= "off"
                 onChange={(e) =>handleSetForm(e)}
                 />
-            </label>
-
-            <label>Image:
+            </div>
+            <div id="sellform-image-container">
+            <p>Image:</p>
                 <input
+                id="sellform-image-input"
                 type= "text" 
                 name= "image_url"
                 autoComplete= "off"
                 onChange={(e) =>handleSetForm(e)}
                 />
-            </label>
-
+                </div>
+            
+            <div id="sellform-startingbid-container">
             <label>Starting Bid:
-                <input
+                $<input
+                id="sellform-starting-bid"
                 step="0.01"
                 type= "number" 
                 name= "starting_bid"
@@ -104,9 +114,11 @@ function SellForm () {
                 onChange={(e) =>handleSetForm(e)}
                 />
             </label>
-
+            </div>
+            <div id="sellform-buy-container">
             <label>Buy Price:
-                <input
+                $<input
+                id="sellform-buy"
                 step="0.01"
                 type= "number" 
                 name= "buy_price"
@@ -114,14 +126,18 @@ function SellForm () {
                 onChange={(e) =>handleSetForm(e)}
                 />
             </label>
-
-            <label>Description:
+            </div>
+            <div id="sellform-desc-container">
+            <p>Description:</p>
                 <textarea
+                id="sellform-desc-input"
+                placeholder="Enter Product Description"
                 name= "message"
                 autoComplete= "off"
                 onChange={(e) =>handleSetForm(e)}
                 />
-            </label>
+           
+            </div>
 
             <button type="submit">Submit</button>
         </form>

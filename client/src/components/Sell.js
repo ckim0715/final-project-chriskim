@@ -8,8 +8,7 @@ function Sell({user, setUser}) {
 
 
     return (
-        <div>
-            <h1>Sell Page</h1>
+        <div id="sellform-wrapper">
             <SellForm user={user} setUser={setUser}/>
         </div>
     )

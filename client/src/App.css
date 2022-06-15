@@ -517,13 +517,125 @@ nav > button {
 }
 
 .cc-submit-btn{
-  padding: 5px;
+  padding: 6px;
   border-radius: 5px;
   margin-top: 5px;
   background-color: black;
   color:white;
 }
 
+#sellform-wrapper{
+  display: block;
+  border-top: solid 1px grey;
+
+}
+
+#sellform-container{
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+}
+
+#type-selector-container{
+  margin-left: 5vw;
+  margin-top: 5vh;
+}
+
+#type-selector{
+  height: 25px;
+
+}
+
+#brand-container{
+  margin-left: 5vw;
+  margin-top: 5vh;
+  width: 300px;
+}
+
+#brand-container > p{
+  margin-bottom: 1px;
+}
+
+#brand-input{
+  height: 25px;
+  width: 200px;
+
+}
+
+#model-container{
+  margin-left: 5vw;
+  margin-top: 2vh;
+  width: 300px;
+
+}
+
+#model-container > p{
+  margin-bottom: 1px;
+
+}
+
+#model-input{
+  height: 25px;
+  width: 200px;
+
+}
+
+#sellform-image-container{
+  margin-left: 5vw;
+  margin-top: 2vh;
+  width: 300px;
+
+}
+
+#sellform-image-container > p{
+  margin-bottom: 1px;
+
+}
+
+#sellform-image-input{
+  height: 25px;
+  width: 200px;
+}
+
+#sellform-startingbid-container{
+  margin-left: 5vw;
+  margin-top: 5vh;
+}
+
+#sellform-starting-bid{
+  margin-left: .2vw;
+  height: 25px;
+  width: 150px;
+  font-size: 20px;
+
+}
+
+#sellform-buy-container{
+  margin-left: 6vw;
+  margin-top: 5vh;
+}
+
+#sellform-buy{
+  margin-left: .2vw;
+  height: 25px;
+  width: 150px;
+  font-size: 20px;
+}
+
+#sellform-desc-container{
+  margin-left: 5vw;
+  margin-top: 2vh;
+}
+
+#sellform-desc-container > p {
+  margin-bottom: 1px;
+}
+
+#sellform-desc-input{
+  width: 500px;
+  height: 100px;
+}
 
 
 
