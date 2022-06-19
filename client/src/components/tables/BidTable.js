@@ -12,30 +12,31 @@ function BidTable ({bidArray, handleDeleteBid}) {
     }
     return (
         <div>
-            <table>
+            <table id="bid-table">
                 <thead>
                     <tr>
                         <th></th>
                         <th>Type</th>
                         <th>Brand</th>
                         <th>Model</th>
-                        <th>Amount</th>
+                        <th>Bid Amt.</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                </tbody>
+                
                 {bidArray.map(bid => {
                     return <tr key={bid.id}>
-                        <td><img className="table-image" src={bid.product.image_url} alt="Product Image"></img></td>
-                        <td>{bid.product.part_type}</td>
-                        <td>{bid.product.brand}</td>
-                        <td>{bid.product.model}</td>
-                        <td>${bid.amount}</td>
-                        <td><button onClick={() => cancelBid(bid)}>Cancel Bid</button></td>
+                        <td id="bid-table-image-row" className = "bid-table-row"><img className="table-image" src={bid.product.image_url} alt="Product Image"></img></td>
+                        <td  className="bid-table-row" id="bid-table-type">{bid.product.part_type}</td>
+                        <td className="bid-table-row">{bid.product.brand}</td>
+                        <td className="bid-table-row">{bid.product.model}</td>
+                        <td className="bid-table-row" id="bid-amount-row">${bid.amount}</td>
+                        <td className="bid-table-row"id="bid-table-btn-row"><button id="bid-table-btn" onClick={() => cancelBid(bid)}>Cancel Bid</button></td>
 
                     </tr>
-                })}
+                    
+                })}</tbody>
             </table>
         </div>
 

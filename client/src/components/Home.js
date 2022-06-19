@@ -4,11 +4,13 @@ import LoginForm from "./forms/LoginForm"
 function Home({user, setUser}) {
 
     return (
-        <>
-            <h1>Home Page</h1>
+       <div id="home-wrapper">
+            <h1>Logo</h1>
+           
 
             <LoginForm user={user} setUser={setUser} />
-        </>
+            </div>
+        
     )
 }
 

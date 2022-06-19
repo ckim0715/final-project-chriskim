@@ -42,34 +42,44 @@ function LoginForm({user, setUser}) {
 
 
     return (
-        <>
-        <form onSubmit={handleSubmit}>
-            <label>Email:
+        <div id="login-form-wrapper">
+        <form  onSubmit={handleSubmit}>
+            <div id="login-form-div">
+           
             <input
+            placeholder="Email Address"
+            id="login-form-email"
             type="text"
             name="email"
             autoComplete="off"
             value= {formData.username}
             onChange= {(e) => handleSetForm(e)}
             />
-            </label>
+           
 
-            <label>Password:
+           
             <input
+            placeholder="Password"
+            id="login-form-pw"
             type="password"
             name="password"
             autoComplete="off"
             value= {formData.password}
             onChange= {(e) => handleSetForm(e)}
             />
-            </label>
-
-            <button type="submit">Login</button>
+            </div>
+           
+            <div id="login-form-btn-container">
+            <button id="login-form-btn" type="submit">Log In</button>
+            </div>
             
         </form>
 
-        <a href='/signup'>New User? Sign Up Here!</a>
-        </>
+        <div id="sign-up-link">
+
+        <a  href='/signup'><em>New User? Sign Up Here!</em></a>
+        </div>
+        </div>
     )
 }
 

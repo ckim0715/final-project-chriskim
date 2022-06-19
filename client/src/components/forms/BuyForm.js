@@ -17,6 +17,7 @@ function BuyForm ({productObj, handleDeleteProduct, setToggleModal}) {
         <form onSubmit={buySubmit}>
             <div id="buyform-cc-text">
             <label><u>Credit Card</u>
+            <br></br>
                 <input id="buy-cc-input" type="tel" maxlength="19" placeholder="Card Number"></input>
                 <br></br>
                 <input id="buy-mm-cc" className="cc-exp" type ="tel" maxlength= "2" placeholder="MM"></input>/

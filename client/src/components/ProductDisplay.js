@@ -29,11 +29,13 @@ function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
     return (
 
         <div className="product-container open-modal" onClick={handleOpenModal}>
+            <div id="product-image-container">
         <img className="display-image" src={product.image_url}></img>
+        </div>
         <p id="product-brand">{productObj.brand}</p>
         <p id= "product-model">{product.model}</p>
         <p id= 'starting_bid'>Starting Bid: ${product.starting_bid}</p>
-        <p id="current-bid">Current Bid: {maxBid()? `$${maxBid()}` : "No Bids"}</p>
+        <p id="current-bid">Current Bid: {maxBid()? `$${maxBid()}` : <em>No Bids</em>}</p>
         <p id="buy-now">Buy Now: ${product.buy_price}</p>
         
         

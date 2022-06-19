@@ -12,7 +12,7 @@ function ProductTable({productArray, setProductArray, handleDeleteProduct}) {
     }
     return ( 
         <div>
-             <table>
+             <table id="product-table">
                 <thead>
                     <tr>
                         <th></th>
@@ -27,13 +27,14 @@ function ProductTable({productArray, setProductArray, handleDeleteProduct}) {
                 </tbody>
                 {productArray.map(product => {
                     return <tr key={product.id}>
-                        <td><img className="table-image" src={product.image_url} alt="Product"></img></td>
-                        <td>{product.part_type}</td>
-                        <td>{product.brand}</td>
-                        <td>{product.model}</td>
-                        <td>{product.bids.length? `$${Math.max(...product.bids.map(bid => bid.amount))}` : "No Bids"}</td>
-                        <td><button onClick={() => cancelProduct(product)}>Remove Listing</button></td>
-
+                        <td className="product-table-row"><img className="table-image" src={product.image_url} alt="Product"></img></td>
+                        <td className="product-table-row">{product.part_type}</td>
+                        <td className="product-table-row">{product.brand}</td>
+                        <td className="product-table-row">{product.model}</td>
+                        <td className="product-table-row">{product.bids.length? `$${Math.max(...product.bids.map(bid => bid.amount))}` : "No Bids"}</td>
+                        <td className="product-table-row"><button id="accept-bid-btn" onClick={() => cancelProduct(product)}>Accept Bid</button></td>
+                        <td className="product-table-row"><button id="remove-listing-btn" onClick={() => cancelProduct(product)}>Remove Listing</button></td>
+                        
                     </tr>
                 })}
             </table>

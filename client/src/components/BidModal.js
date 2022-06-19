@@ -5,7 +5,7 @@ import BuyForm from "./forms/BuyForm";
 
 function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProduct}){
 
-    const [showBidForm, setShowBidForm] = useState(false)
+    const [showBidForm, setShowBidForm] = useState(true)
     const [showBuyForm, setShowBuyForm] = useState(false)
 
     function bidToggle () {
@@ -41,7 +41,7 @@ function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProdu
             <p>{productObj.message}</p>
             </div>
             <div id="modal-btn-container">
-            <button id="bid-button" onClick={bidToggle}>Place Bid</button>
+            <button id="bid-button" autoFocus onClick={bidToggle}>Place Bid</button>
             
             
             <button id="buy-button" onClick={buyToggle}>Buy Now</button>

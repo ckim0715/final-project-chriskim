@@ -49,20 +49,20 @@ function Account({user, setUser}) {
     }
 
     return (
-        <div>
-        <h1>{currentUser.name}</h1>
-        <p>Email Address</p>
-        <p> {currentUser.email}</p>
-        <p>Phone Number</p>
-        <p> {currentUser.phone_number}</p>
-        <p>Billing Address</p>
-        <p> {currentUser.address}</p>
-
-        <div>
-        {showBidTable? <button onClick={()=>setShowBidTable(false)}>Hide Bids</button> : <button onClick={viewBids}>View Bids</button>}
+        <div id="accountpage-wrapper">
+        <div id="profile-container">
+        <h1 id="account-name-text">{currentUser.name}</h1>
+        <p className="account-text-desc"><strong>Email Address</strong></p>
+        <p id="account-email-text"> {currentUser.email}</p>
+        <p className="account-text-desc"><strong>Phone Number</strong></p>
+        <p id="account-ph-text"> {currentUser.phone_number}</p>
+        <p className="account-text-desc"><strong>Billing Address</strong></p>
+        <p id="account-address-text"> {currentUser.address}</p>
         </div>
-        <div>
-        {showProductTable? <button onClick={()=>setShowProductTable(false)}>Hide Listings</button> : <button onClick={viewProducts}>View Listings</button>}
+
+        <div id="account-btn-container">
+        {showBidTable? <button className="account-bid-btn" onClick={()=>setShowBidTable(false)}>Hide Bids</button> : <button className="account-bid-btn" onClick={viewBids}>View Bids</button>}
+        {showProductTable? <button className="account-listing-btn" onClick={()=>setShowProductTable(false)}>Hide Listings</button> : <button className="account-listing-btn" onClick={viewProducts}>View Listings</button>}
         </div>
         {showBidTable? <BidTable bidArray={bidArray} setBidArray={setBidArray} handleDeleteBid={handleDeleteBid} /> : null}
         {showProductTable? <ProductTable productArray={productArray} setProductArray={setProductArray} handleDeleteProduct={handleDeleteProduct} /> : null}

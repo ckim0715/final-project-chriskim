@@ -45,66 +45,85 @@ function SignupForm({user, setUser}) {
         <div id='signup-form-container'>
            
            <form onSubmit={handleSubmit}>
-            <label>Name:
+          
             <input
+            id="signup-form-name"
+            placeholder="Name"
             type="text"
             name="name"
             autoComplete="off"
             value= {formData.name}
             onChange= {(e) => handleSetForm(e)}
             />
-            </label>
+            <br></br>
+            
 
-            <label>Email:
+            
             <input
+            id="signup-form-email"
+            placeholder="Email"
             type="text"
             name="email"
             autoComplete="off"
             value= {formData.email}
             onChange= {(e) => handleSetForm(e)}
             />
-            </label>
+            <br>
+            </br>
+            
 
-            <label>Address:
+            
             <textarea
+            id="signup-form-address"
+            placeholder="Address"
             name="address"
             autoComplete="off"
             value= {formData.address}
             onChange= {(e) => handleSetForm(e)}
             />
-            </label>
+            <br></br>
+           
 
-            <label>Phone Number:
+            
             <input
+            id="signup-form-ph"
+            placeholder="Phone Number"
             type="text"
             name="phone_number"
             autoComplete="off"
             value= {formData.phone_number}
             onChange= {(e) => handleSetForm(e)}
             />
-            </label>
+            <br></br>
+            
 
-            <label>Password:
+            
             <input
+            className="signup-form-pw"
+            placeholder="Password"
             type="password"
             name="password"
             autoComplete="off"
             value= {formData.password}
             onChange= {(e) => handleSetForm(e)}
             />
-            </label>
+            <br></br>
+            
 
-            <label>Confirm Password:
+          
             <input
+             className="signup-form-pw"
+            placeholder="Confirm Password"
             type="password"
             name="password_confirmation"
             autoComplete="off"
             value= {formData.password_confirmation}
             onChange= {(e) => handleSetForm(e)}
             />
-            </label>
+            <br></br>
+            
 
-            <button type="submit">Submit</button>
+            <button id="signup-form-btn" type="submit">Sign Up</button>
             
         </form>
         

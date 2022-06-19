@@ -56,6 +56,7 @@ function BidForm ({productObj, setProductObj}) {
             </div>
             <div id="bidform-cc-text">
             <label><u>Credit Card</u>
+            <br></br>
                 <input id="bid-cc-input" type="tel" maxlength="19" placeholder="Card Number"></input>
                 <br></br>
                 <input id="bid-mm-cc" className="cc-exp" type ="tel" maxlength= "2" placeholder="MM"></input>/
