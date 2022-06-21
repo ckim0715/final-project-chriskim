@@ -5,7 +5,7 @@ function Home({user, setUser}) {
 
     return (
        <div id="home-wrapper">
-            <h1>thrift-E</h1>
+            <h1>THRIFT_E</h1>
            
 
             <LoginForm user={user} setUser={setUser} />

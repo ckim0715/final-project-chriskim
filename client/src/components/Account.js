@@ -58,12 +58,13 @@ function Account({user, setUser}) {
         <p id="account-ph-text"> {currentUser.phone_number}</p>
         <p className="account-text-desc"><strong>Billing Address</strong></p>
         <p id="account-address-text"> {currentUser.address}</p>
-        </div>
-
         <div id="account-btn-container">
         {showBidTable? <button className="account-bid-btn" onClick={()=>setShowBidTable(false)}>Hide Bids</button> : <button className="account-bid-btn" onClick={viewBids}>View Bids</button>}
         {showProductTable? <button className="account-listing-btn" onClick={()=>setShowProductTable(false)}>Hide Listings</button> : <button className="account-listing-btn" onClick={viewProducts}>View Listings</button>}
         </div>
+        </div>
+
+       
         {showBidTable? <BidTable bidArray={bidArray} setBidArray={setBidArray} handleDeleteBid={handleDeleteBid} /> : null}
         {showProductTable? <ProductTable productArray={productArray} setProductArray={setProductArray} handleDeleteProduct={handleDeleteProduct} /> : null}
         </div>

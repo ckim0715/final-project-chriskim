@@ -103,17 +103,17 @@ function Browse({user}) {
         switch (e.target.value) {
 
             case "Sort By: Brand":
-                // setProductDisplay(productDisplay.sort(compareValues('brand')));
+                setProductDisplay([...productDisplay.sort(compareValues('brand'))]);
                 console.log(productDisplay.sort(compareValues('brand')));
                 break;
             
             case "Sort By: Model":
-                // setProductDisplay(productDisplay.sort(compareValues('model')));
+                setProductDisplay([...productDisplay.sort(compareValues('model'))]);
                 console.log(productDisplay.sort(compareValues('model')));
                 break;
 
             case "Sort By: Lowest Buy Price":
-                // setProductDisplay(productDisplay.sort(compareValues('buy_price')));
+                setProductDisplay([...productDisplay.sort(compareValues('buy_price'))]);
                 console.log(productDisplay.sort(compareValues('buy_price')));
                 break;
         }
@@ -165,8 +165,9 @@ function Browse({user}) {
         </div>
 
         <div id="products-display" >
-       {productDisplay.map((product) => <ProductDisplay productObj={productObj} setProductObj={setProductObj} setToggleModal ={setToggleModal} key={product.id} product={product} />
-       )}
+       {productDisplay.map((product) =>
+          <ProductDisplay productObj={productObj} setProductObj={setProductObj} setToggleModal ={setToggleModal} key={product.id} product={product} />)
+       }
         </div>
 
         {toggleModal && <BidModal  updateCurrentBid={updateCurrentBid} handleDeleteProduct={handleDeleteProduct} setToggleModal={setToggleModal} productObj={productObj} setProductObj={setProductObj}/>}

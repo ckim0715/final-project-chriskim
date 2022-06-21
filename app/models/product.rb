@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
     belongs_to :user
     has_many :bids, dependent: :destroy
+    has_one_attached :product_image, dependent: :destroy
 
     validates :part_type, presence: true
     validates :brand, presence: true
@@ -8,6 +9,6 @@ class Product < ApplicationRecord
     validates :buy_price, presence: true
     validates :user_id, presence: true
     validates :model, presence: true
-    validates :image_url, presence: true
+    
 
 end

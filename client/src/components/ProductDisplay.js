@@ -15,7 +15,7 @@ function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
             starting_bid: product.starting_bid,
             buy_price: product.buy_price,
             model: product.model,
-            image_url: product.image_url,
+            product_image: product.product_image.url,
             message: product.message,
             current_bid: maxBid(),
             id: product.id
@@ -31,13 +31,12 @@ function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
 
         <div className="product-container open-modal" onClick={handleOpenModal}>
             <div id="product-image-container">
-        <img className="display-image" src={product.image_url}></img>
+        <img className="display-image" src={product.product_image.url}></img>
         </div>
         <p id="product-brand">{product.brand}</p>
         <p id= "product-model">{product.model}</p>
-        <p id= 'starting_bid'>Starting Bid: ${product.starting_bid}</p>
-        <p id="current-bid">Current Bid: {maxBid()? `$${maxBid()}` : <em>No Bids</em>}</p>
-        <p id="buy-now">Buy Now: ${product.buy_price}</p>
+        <p id= 'starting_bid'>Starting Bid: ${parseFloat(product.starting_bid)}</p>
+        <p id="buy-now">Buy Now: ${parseFloat(product.buy_price)}</p>
         
         
 

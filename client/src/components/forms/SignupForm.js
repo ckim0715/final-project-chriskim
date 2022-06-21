@@ -21,6 +21,11 @@ function SignupForm({user, setUser}) {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
 
+    function handleSignupError(errors){
+        errors.map((error)=> alert(error))
+        
+    }
+
     function handleSubmit(e){
         e.preventDefault();
         fetch("/signup", {
@@ -34,7 +39,7 @@ function SignupForm({user, setUser}) {
                 r.json().then((user) => setUser(user));
                 navigate('/browse')
             } else {
-                r.json().then((err) => console.log(err.errors))
+                r.json().then((err) => handleSignupError(err.errors))
             }
         });
             

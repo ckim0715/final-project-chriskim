@@ -29,13 +29,13 @@ function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProdu
                 <button onClick={() => setToggleModal(false)}> X </button>
                 </div>
                         
-            <img id="modal-image" src= {productObj.image_url} alt="Image of Product"></img>
+            <img id="modal-image" src= {productObj.product_image} alt="Image of Product"></img>
             <div id="modal-text-container">
             <p id ="modal-brand-text" className="modal-text">{productObj.brand}</p>
             <p className="modal-text">{productObj.model}</p>
-            <p className="modal-text"><u>Starting Bid</u>: <strong>${productObj.starting_bid}</strong></p>
-            <p className="modal-text"><u>Current Bid</u>: {productObj.current_bid ? <strong>${productObj.current_bid}</strong> : <strong>No Bids</strong>}</p>
-            <p className="modal-text"><u>Buy Now</u>: <strong>${productObj.buy_price}</strong></p>
+            <p className="modal-text"><u>Starting Bid</u>: <strong>${parseFloat(productObj.starting_bid)}</strong></p>
+            <p className="modal-text"><u>Current Bid</u>: {parseFloat(productObj.current_bid) ? <strong>${parseFloat(productObj.current_bid)}</strong> : <strong>No Bids</strong>}</p>
+            <p className="modal-text"><u>Buy Now</u>: <strong>${parseFloat(productObj.buy_price)}</strong></p>
             </div>
             <div id="modal-description">
                

@@ -12,7 +12,10 @@ function SellForm () {
         user_id: NaN,
         image_url: "",
         message: "",
+        product_image: null,
         })
+
+        
 
         useEffect(() => {
             fetch("/me").then((response) => {
@@ -22,21 +25,36 @@ function SellForm () {
             });
           }, []);
 
+          function handleErrors(errors){
+            errors.map((error) => alert(error))
+          }
+
+
+
 
     function handleSubmitForm(e){
         e.preventDefault();
+        const formData = new FormData();
+
+        formData.append('part_type', product.part_type);
+        formData.append('brand', product.brand);
+        formData.append('model', product.model);
+        formData.append('starting_bid', product.starting_bid);
+        formData.append('buy_price', product.buy_price);
+        formData.append('user_id', product.user_id);
+        formData.append('message', product.message);
+        formData.append('product_image', product.product_image);
+
+
         
         fetch("/product", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(product)
+            body: formData,
         }).then ((r)=> {
             if (r.ok) {
                 r.json().then ((product)=> console.log(product));
             } else {
-                r.json().then((err) => console.log(err.errors))
+                r.json().then((err) => handleErrors(err.errors))
             }
         });
         e.target.reset();
@@ -46,6 +64,12 @@ function SellForm () {
 
     function handleSetForm(e) {
         setProduct({...product, [e.target.name]: e.target.value})
+        
+ 
+     }
+
+     function handleSetImage(e) {
+        setProduct({...product, [e.target.name]: e.target.files[0]})
         
  
      }
@@ -96,10 +120,10 @@ function SellForm () {
             <p>Image:</p>
                 <input
                 id="sellform-image-input"
-                type= "text" 
-                name= "image_url"
-                autoComplete= "off"
-                onChange={(e) =>handleSetForm(e)}
+                type= "file" 
+                name= "product_image"
+                accept= "image/*"
+                onChange={(e) =>handleSetImage(e)}
                 />
                 </div>
             

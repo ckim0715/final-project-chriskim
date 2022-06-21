@@ -17,6 +17,11 @@ function LoginForm({user, setUser}) {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
 
+    function handleLoginError(error){
+        alert(error)
+
+    }
+
     
 
     function handleSubmit(e){
@@ -32,7 +37,7 @@ function LoginForm({user, setUser}) {
                 r.json().then((user) => setUser(user));
                 navigate('/browse')
             } else {
-                r.json().then((err) => console.log(err.errors))
+                r.json().then((err) => handleLoginError(err.errors))
             }
         });
             
