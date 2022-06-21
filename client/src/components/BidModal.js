@@ -3,7 +3,7 @@ import BidForm from "./forms/BidForm";
 import BuyForm from "./forms/BuyForm";
 
 
-function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProduct}){
+function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProduct, updateCurrentBid}){
 
     const [showBidForm, setShowBidForm] = useState(true)
     const [showBuyForm, setShowBuyForm] = useState(false)
@@ -38,7 +38,8 @@ function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProdu
             <p className="modal-text"><u>Buy Now</u>: <strong>${productObj.buy_price}</strong></p>
             </div>
             <div id="modal-description">
-            <p>{productObj.message}</p>
+               
+            <p id="modal-message">{productObj.message}</p>
             </div>
             <div id="modal-btn-container">
             <button id="bid-button" autoFocus onClick={bidToggle}>Place Bid</button>
@@ -47,8 +48,8 @@ function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProdu
             <button id="buy-button" onClick={buyToggle}>Buy Now</button>
             </div>
 
-            {showBidForm? <BidForm setProductObj={setProductObj} productObj={productObj}  /> : null}
-            {showBuyForm? <BuyForm setToggleModal={setToggleModal} setProductObj={setProductObj} productObj={productObj} handleDeleteProduct={handleDeleteProduct}  /> : null}
+            {showBidForm? <BidForm setProductObj={setProductObj} productObj={productObj} updateCurrentBid={updateCurrentBid}  /> : null}
+            {showBuyForm? <BuyForm setToggleModal={setToggleModal} setProductObj={setProductObj} productObj={productObj} handleDeleteProduct={handleDeleteProduct} updateCurrentBid={updateCurrentBid} /> : null}
 
             </div>
         </div>

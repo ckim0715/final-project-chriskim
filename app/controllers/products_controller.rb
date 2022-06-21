@@ -17,6 +17,16 @@ class ProductsController < ApplicationController
         end
     end
 
+    def search
+        search_term = params[:search_term]
+        products = Product.where(["LOWER(brand) LIKE ?", "%#{search_term.downcase}%"]).or(Product.where(["LOWER(part_type) LIKE ?", "%#{search_term.downcase}%"])).or(Product.where(["LOWER(model) LIKE ?", "%#{search_term.downcase}%"])).or(Product.where(["LOWER(message) LIKE ?", "%#{search_term.downcase}%"]))
+        if products
+            render json: products
+        else 
+            render json: { error: "No Matching Listings" }, status: :not_found
+        end
+    end
+
 
     def pc
         pc = Product.where(part_type: "PC")
@@ -71,7 +81,7 @@ class ProductsController < ApplicationController
     private
 
     def product_params
-        params.permit(:part_type, :brand, :model, :starting_bid, :buy_price, :user_id, :image_url, :message)
+        params.permit(:part_type, :brand, :model, :starting_bid, :buy_price, :user_id, :image_url, :message, :product_image)
     end
 
 end

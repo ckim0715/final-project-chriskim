@@ -11,7 +11,7 @@ function BidTable ({bidArray, handleDeleteBid}) {
 
     }
     return (
-        <div>
+        <div id="bid-table-container">
             <table id="bid-table">
                 <thead>
                     <tr>

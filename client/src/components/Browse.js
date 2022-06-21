@@ -60,7 +60,71 @@ function Browse({user}) {
         const newProductArray = productDisplay.filter ((product) => product.id !== deletedProduct.id)
         setProductDisplay(newProductArray)
 
+
+
     }
+
+    function updateCurrentBid(bid){
+        setProductObj({...productObj, current_bid: bid.amount})
+    }
+
+    function handleSearch (e){
+        e.preventDefault();
+        fetch(`/product/search/${e.target.search_term.value}`)
+        .then((r) => r.json())
+        .then((searchData) => setProductDisplay(searchData))
+    }
+
+    function compareValues(key, order ="asc"){
+        return function innerSort(a,b) {
+            if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)){
+                return 0
+            }
+
+            const varA = (typeof a[key] === 'string')
+            ? a[key].toUpperCase() : a[key];
+            const varB = (typeof b[key] === 'string')
+            ? b[key].toUpperCase() : b[key];
+
+            let comparison = 0;
+            if (varA > varB) {
+                comparison = 1;
+            } else if (varA < varB) {
+                comparison = -1;
+            }
+
+            return (
+                (order === 'desc') ? (comparison * -1) : comparison
+            )
+        }
+    }
+
+    function handleFilter (e) {
+        switch (e.target.value) {
+
+            case "Sort By: Brand":
+                // setProductDisplay(productDisplay.sort(compareValues('brand')));
+                console.log(productDisplay.sort(compareValues('brand')));
+                break;
+            
+            case "Sort By: Model":
+                // setProductDisplay(productDisplay.sort(compareValues('model')));
+                console.log(productDisplay.sort(compareValues('model')));
+                break;
+
+            case "Sort By: Lowest Buy Price":
+                // setProductDisplay(productDisplay.sort(compareValues('buy_price')));
+                console.log(productDisplay.sort(compareValues('buy_price')));
+                break;
+        }
+
+        
+            
+
+    }
+
+
+    
 
     
 
@@ -77,13 +141,35 @@ function Browse({user}) {
         <a href="#" onClick={fetchPowerSupply}>Power Supply</a>
         <a href="#" onClick={fetchOther}>Other</a>
         </div>
+        
+        <div id="search-bar-container">
+            <form onSubmit={(e) => handleSearch(e)}>
+            <input
+            id="search-bar"
+            type="search"
+            name="search_term"
+            placeholder="Enter brand, model, description, etc..."
+            width="800px">
+            </input>
+
+            <button id="search-btn" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div id="filter-container">
+            <select id='product-filter' onChange={(e) => handleFilter(e)}>
+                <option>Sort By: Brand</option>
+                <option>Sort By: Model</option>
+                <option>Sort By: Lowest Buy Price</option>
+            </select>
+        </div>
 
         <div id="products-display" >
        {productDisplay.map((product) => <ProductDisplay productObj={productObj} setProductObj={setProductObj} setToggleModal ={setToggleModal} key={product.id} product={product} />
        )}
         </div>
 
-        {toggleModal && <BidModal  handleDeleteProduct={handleDeleteProduct} setToggleModal={setToggleModal} productObj={productObj} setProductObj={setProductObj}/>}
+        {toggleModal && <BidModal  updateCurrentBid={updateCurrentBid} handleDeleteProduct={handleDeleteProduct} setToggleModal={setToggleModal} productObj={productObj} setProductObj={setProductObj}/>}
         </div>
         {console.log(productDisplay)}
         

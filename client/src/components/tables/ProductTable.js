@@ -11,7 +11,7 @@ function ProductTable({productArray, setProductArray, handleDeleteProduct}) {
 
     }
     return ( 
-        <div>
+        <div id="product-table-container">
              <table id="product-table">
                 <thead>
                     <tr>

@@ -8,5 +8,6 @@ class Product < ApplicationRecord
     validates :buy_price, presence: true
     validates :user_id, presence: true
     validates :model, presence: true
+    validates :image_url, presence: true
 
 end

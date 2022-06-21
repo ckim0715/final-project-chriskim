@@ -107,7 +107,8 @@ function SellForm () {
             <label>Starting Bid:
                 $<input
                 id="sellform-starting-bid"
-                step="0.01"
+                min="1"
+                step="1"
                 type= "number" 
                 name= "starting_bid"
                 autoComplete= "off"
@@ -119,7 +120,8 @@ function SellForm () {
             <label>Buy Price:
                 $<input
                 id="sellform-buy"
-                step="0.01"
+                min="1"
+                step="1"
                 type= "number" 
                 name= "buy_price"
                 autoComplete= "off"

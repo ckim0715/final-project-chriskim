@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function BidForm ({productObj, setProductObj}) {
+function BidForm ({productObj, setProductObj, updateCurrentBid}) {
 
     const [bidObj, setBidObj] = useState ({
 
@@ -33,7 +33,7 @@ function BidForm ({productObj, setProductObj}) {
                 body: JSON.stringify(bidObj)
             }).then ((r)=> {
                 if (r.ok) {
-                    r.json().then((bid)=> setProductObj({...productObj, current_bid: bid.amount}));
+                    r.json().then((bid)=> updateCurrentBid(bid));
                 } else {
                     r.json().then((err) => console.log(err.errors))
                 }
@@ -51,7 +51,7 @@ function BidForm ({productObj, setProductObj}) {
         <form onSubmit={(e) => bidSubmit(e)}>
             <div id="bid-input-container">
             <label>$
-                <input id="bid-input" type="number" placeholder="Enter Bid" name="amount" onChange={(e) => updateBid(e)}></input>
+                <input id="bid-input" type="number" placeholder="Enter Bid" name="amount" step="1" onChange={(e) => updateBid(e)}></input>
             </label>
             </div>
             <div id="bidform-cc-text">
