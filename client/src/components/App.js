@@ -29,9 +29,13 @@ console.log(user)
     
   <div className ="App">
 
-    <div id="navbar-container">
-      <p id="nav-logo">THRIFT_E</p>
+      <div id="nav-logo-container">
+      <div id="logo-container">
+      {user? <span id="nav-logo">THRIFT</span>:null}{user?<span id="nav-logo2">_E</span> : null}
+      </div>
+      <div id="navbar-container">
    {user? <Navbar user={user} setUser={setUser} /> : null}
+    </div>
     </div>
     <Routes>
       <Route path='/' element ={<Home user={user} setUser={setUser} />} />

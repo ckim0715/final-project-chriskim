@@ -69,10 +69,17 @@ function Browse({user}) {
     }
 
     function handleSearch (e){
+        if (e.target.search_term.value){
         e.preventDefault();
         fetch(`/product/search/${e.target.search_term.value}`)
         .then((r) => r.json())
         .then((searchData) => setProductDisplay(searchData))
+        } else {
+            alert("TYPE SOMETHING IN BUDDY!")
+        }
+        
+
+        
     }
 
     function compareValues(key, order ="asc"){

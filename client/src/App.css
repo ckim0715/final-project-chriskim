@@ -61,7 +61,7 @@ div.product-container{
   display:flex;
   flex-direction: column;
   width: 15vw;
-  height: 50vh;
+  height: 45vh;
   border: solid .5px rgb(159, 159, 159);
   justify-content: center;
   align-items: center;
@@ -98,9 +98,64 @@ div#products-display{
   
 }
 
+#product-display-text-container{
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 1vw;
+  margin-top: 1vh;
+}
+
+
+
+p#product-brand{
+  margin-top: 1vh;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+p#product-model{
+  margin-top: 1vh;
+  font-size: 1em;
+  font-weight: bold;
+
+}
+
+span#starting-bid-text{
+  margin-top: 1vh;
+  text-decoration: underline;
+  
+}
+
+span#starting-bid-number{
+  font-weight: bold;
+  font-size: 1em
+}
+
+span#buy-now-text{
+  font-weight: italic;
+  text-decoration: underline;
+ 
+}
+
+span#buy-now-number{
+
+  font-weight: bold;
+}
+
+#buy-now-text-container{
+  margin-top: 10px;
+}
+
+
+
 div.product-container > p {
-  margin-top: .5vh;
-  margin-bottom: .5vh;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+
+
+  
   
 }
 
@@ -225,40 +280,49 @@ div.product-container > p {
   width: 300px;
   height: 400px
 }
+#nav-logo-container{
+  height: 60x;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
 
 #navbar-container{
-  display:flex;
-  height: 50px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  padding-bottom: 0px;
-  width: 100%;
-  padding-right: 0px;
-  justify-content: flex-end;
   
+  margin-left: 51vw;
+  margin-top: .8vw;
 
 }
 
-#navbar{
-  align-self: flex-end;
+#logo-container{
+  margin-left: 2vw;
+  margin-bottom: 1vh;
+ 
   
 }
 
 #nav-logo{
-margin-right: 57vw;
-margin-bottom: 300px;
-padding-bottom: 10px;
-font-size: 2em;
-padding-top: 0px;
+
+font-size: 3em;
 margin-top: 1vh;
 width: auto;
 height: auto;
 color: blue;
 font-weight: bold;
 
-  
-
 }
+
+#nav-logo2{
+
+  font-size: 3em;
+  padding-top: 0px;
+  margin-top: 1vh;
+  width: auto;
+  height: auto;
+  color: rgba(2, 211, 58, 0.83);
+  font-weight: bold;
+  
+  }
 
 
 
@@ -740,6 +804,8 @@ nav > button {
     grid-column-end: 2;
     display: flex;
     flex-direction: column;
+    margin-left: 1vw;
+    margin-top: 2vh;
       
   }
 
@@ -1112,7 +1178,7 @@ nav > button {
     width: 700px;
     height: 35px;
     padding-bottom: 0px;
-    
+    border-radius: 5px;
     margin-top: 8vh;
     
     
@@ -1127,6 +1193,7 @@ nav > button {
     padding: 5px;
     border-radius: 10px;
     font-weight: bold;
+    
 
   }
 
@@ -1138,7 +1205,48 @@ nav > button {
   #filter-container{
     grid-column: 5/6;
     grid-row: 1/2;
-    margin-top: 10vh;
+    margin-top: 8.2vh;
+    margin-left: 6vw;
+  }
+
+  #home-logo{
+
+    font-size: 2em;
+    color: blue;
+
+  }
+
+  #home-logo2{
+    font-size: 2em;
+    color: rgba(2, 211, 58, 0.83);
+
+  }
+
+  select#product-filter{
+    background-color: transparent;
+    border-radius: 5px;
+    width: 180px;
+    border-color: blue;
+    height: 30px;
+    margin-bottom: 10vh;
+    padding-top: 0;
+  }
+
+  #about-logo,
+  #about-logo2,
+  #about-excl{
+    font-weight: bold;
+    font-size: 1.25em;
+
+  }
+
+  #about-logo{
+    color: blue;
+
+  }
+
+  #about-logo2{
+    color:rgba(2, 211, 58, 0.83)
   }
 
  

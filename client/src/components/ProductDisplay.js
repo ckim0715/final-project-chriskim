@@ -33,10 +33,18 @@ function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
             <div id="product-image-container">
         <img className="display-image" src={product.product_image.url}></img>
         </div>
+        <div id="product-display-text-container">
         <p id="product-brand">{product.brand}</p>
         <p id= "product-model">{product.model}</p>
-        <p id= 'starting_bid'>Starting Bid: ${parseFloat(product.starting_bid)}</p>
-        <p id="buy-now">Buy Now: ${parseFloat(product.buy_price)}</p>
+        <div id="starting-bid-text-container">
+        <span id= 'starting-bid-text'>Starting Bid:</span><span id="starting-bid-number"> ${parseFloat(product.starting_bid)}</span>
+        
+        </div>
+        
+        <div id="buy-now-text-container">
+        <span id="buy-now-text">Buy Now:</span> <span id="buy-now-number">${parseFloat(product.buy_price)}</span>
+        </div>
+        </div>
         
         
 

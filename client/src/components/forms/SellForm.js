@@ -29,7 +29,7 @@ function SellForm () {
           }, []);
 
           function handleErrors(errors){
-            errors.map((error) => alert(error))
+            console.log(errors)
           }
 
 
@@ -37,7 +37,7 @@ function SellForm () {
 
     function handleSubmitForm(e){
         e.preventDefault();
-        const formData = new FormData();
+        let formData = new FormData();
 
         formData.append('part_type', product.part_type);
         formData.append('brand', product.brand);
@@ -61,6 +61,8 @@ function SellForm () {
             }
         });
         e.target.reset();
+        setShowImage(false);
+        
 
 
     }
