@@ -15,6 +15,9 @@ function SellForm () {
         product_image: null,
         })
 
+        const [showImage, setShowImage] = useState(false)
+        const [imageURL, setImageURL] = useState("")
+
         
 
         useEffect(() => {
@@ -69,7 +72,11 @@ function SellForm () {
      }
 
      function handleSetImage(e) {
-        setProduct({...product, [e.target.name]: e.target.files[0]})
+        setProduct({...product, [e.target.name]: e.target.files[0]});
+        let newImageURL = (URL.createObjectURL(e.target.files[0]));
+        setImageURL(newImageURL);
+        setShowImage(true);
+        console.log(imageURL)
         
  
      }
@@ -77,7 +84,7 @@ function SellForm () {
     return (
         <div id="sellform-container">
         {console.log(product)}
-        <form onSubmit={(e) => handleSubmitForm(e)}>
+        <form id ="sellform" onSubmit={(e) => handleSubmitForm(e)}>
             <div id="type-selector-container">
             <label>
             <select id="type-selector" defaultValue={"Default"} name="part_type" onChange={(e) =>handleSetForm(e)}>
@@ -115,6 +122,11 @@ function SellForm () {
                 autoComplete= "off"
                 onChange={(e) =>handleSetForm(e)}
                 />
+            </div>
+            <div id="sellform-previewimg-container">
+
+               {showImage? <img id="sellform-image" src={imageURL}></img> : null}
+
             </div>
             <div id="sellform-image-container">
             <p>Image:</p>
@@ -164,6 +176,8 @@ function SellForm () {
                 />
            
             </div>
+
+            
 
             <button id="sellform-btn" type="submit">Submit</button>
         </form>

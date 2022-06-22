@@ -30,7 +30,8 @@ console.log(user)
   <div className ="App">
 
     <div id="navbar-container">
-   {user? <Navbar id="navbar" user={user} setUser={setUser} /> : null}
+      <p id="nav-logo">THRIFT_E</p>
+   {user? <Navbar user={user} setUser={setUser} /> : null}
     </div>
     <Routes>
       <Route path='/' element ={<Home user={user} setUser={setUser} />} />

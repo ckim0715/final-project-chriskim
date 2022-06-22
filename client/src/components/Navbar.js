@@ -13,7 +13,7 @@ function Navbar ({user, setUser}) {
 
     return(
     
-    <nav>
+    <nav id="navbar">
     <a href="/browse">Browse</a>
     <a href="/about">About</a>
     <a href="/account">My Account</a>
