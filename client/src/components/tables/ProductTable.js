@@ -26,7 +26,7 @@ function ProductTable({productArray, setProductArray, handleDeleteProduct}) {
 
                 </tbody>
                 {productArray.map(product => {
-                    return <tr key={product.id}>
+                    return <tr id="listing-table-row" key={product.id}>
                         <td className="product-table-row"><img className="table-image" src={product.product_image.url} alt="Product"></img></td>
                         <td className="product-table-row">{product.part_type}</td>
                         <td className="product-table-row">{product.brand}</td>

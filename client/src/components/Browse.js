@@ -152,6 +152,7 @@ function Browse({user}) {
         <div id="search-bar-container">
             <form onSubmit={(e) => handleSearch(e)}>
             <input
+            autoComplete="off"
             id="search-bar"
             type="search"
             name="search_term"
@@ -167,7 +168,6 @@ function Browse({user}) {
             <select id='product-filter' onChange={(e) => handleFilter(e)}>
                 <option>Sort By: Brand</option>
                 <option>Sort By: Model</option>
-                <option>Sort By: Lowest Buy Price</option>
             </select>
         </div>
 
