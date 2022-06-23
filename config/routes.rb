@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get "/product", to: "products#show"
   delete "product/:id", to: "products#destroy"
   get "/product/search/:search_term", to: "products#search"
+  get "/product/:id", to: "products#display"
+  
 
   post "/bid", to: "bids#create"
   get "/bid", to: "bids#show"

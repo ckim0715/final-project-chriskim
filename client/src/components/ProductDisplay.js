@@ -2,25 +2,28 @@ import React, { useState, useEffect } from "react";
 
 function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
 
-    function maxBid(){
-        if (product.bids.length > 0) {return  Math.max(...product.bids.map(bid => bid.amount))} else {return 0} 
+    function maxBid(newProductData){
+        if (newProductData.bids.length > 0) {return  Math.max(...newProductData.bids.map(bid => bid.amount))} else {return 0} 
     }
     
 
-    function handleOpenModal() {
-        setToggleModal(true)
-        setProductObj({
-            part_type: product.part_type,
-            brand: product.brand,
-            starting_bid: product.starting_bid,
-            buy_price: product.buy_price,
-            model: product.model,
-            product_image: product.product_image.url,
-            message: product.message,
-            current_bid: maxBid(),
-            id: product.id
+    function handleOpenModal(product) {
+        fetch(`/product/${product.id}`)
+        .then((r) => r.json())
+        .then((newProductData) => setProductObj({
+            part_type: newProductData.part_type,
+            brand: newProductData.brand,
+            starting_bid: newProductData.starting_bid,
+            buy_price: newProductData.buy_price,
+            model: newProductData.model,
+            product_image: newProductData.product_image.url,
+            message: newProductData.message,
+            current_bid: maxBid(newProductData),
+            id: newProductData.id
 
-        })
+        }))
+        setToggleModal(true);
+        
         
         
      
@@ -29,7 +32,7 @@ function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
 
     return (
 
-        <div className="product-container open-modal" onClick={handleOpenModal}>
+        <div className="product-container open-modal" onClick={ () => handleOpenModal(product)}>
             <div id="product-image-container">
         <img className="display-image" src={product.product_image.url}></img>
         </div>

@@ -17,6 +17,15 @@ class ProductsController < ApplicationController
         end
     end
 
+    def display
+        product = Product.find_by(id: params[:id])
+        if product
+            render json: product
+        else 
+            render json: {error: "Product not found"}, status: :not_found
+        end
+    end
+
     def search
         search_term = params[:search_term]
         products = Product.where(["LOWER(brand) LIKE ?", "%#{search_term.downcase}%"]).or(Product.where(["LOWER(part_type) LIKE ?", "%#{search_term.downcase}%"])).or(Product.where(["LOWER(model) LIKE ?", "%#{search_term.downcase}%"])).or(Product.where(["LOWER(message) LIKE ?", "%#{search_term.downcase}%"]))
