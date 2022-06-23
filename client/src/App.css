@@ -60,8 +60,8 @@ img.display-image{
 div.product-container{
   display:flex;
   flex-direction: column;
-  width: 15vw;
-  height: 45vh;
+  width: 250px;
+  height: 350px;
   border: solid .5px rgb(159, 159, 159);
   justify-content: center;
   align-items: center;

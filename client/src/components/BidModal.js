@@ -37,9 +37,9 @@ function BidModal ({setToggleModal, productObj, setProductObj, handleDeleteProdu
             <div id="modal-text-container">
             <p id ="modal-brand-text" className="modal-text"><strong>{productObj.brand}</strong></p>
             <p className="modal-text"><strong>{productObj.model}</strong></p>
-            <p className="modal-text"><u>Starting Bid</u>: <strong>${parseFloat(productObj.starting_bid)}</strong></p>
-            <p className="modal-text"><u>Current Bid</u>: {parseFloat(productObj.current_bid) ? <strong>${parseFloat(productObj.current_bid)}</strong> : <strong>No Bids</strong>}</p>
-            <p className="modal-text"><u>Buy Now</u>: <strong>${parseFloat(productObj.buy_price)}</strong></p>
+            <p className="modal-text"><u>Starting Bid</u>: <br></br><strong>${parseFloat(productObj.starting_bid)}</strong></p>
+            <p className="modal-text"><u>Current Bid</u>: <br></br>{parseFloat(productObj.current_bid) ? <strong>${parseFloat(productObj.current_bid)}</strong> : <strong>No Bids</strong>}</p>
+            <p className="modal-text"><u>Buy Now</u>: <br></br><strong>${parseFloat(productObj.buy_price)}</strong></p>
             </div>
             <div id="modal-description">
                
