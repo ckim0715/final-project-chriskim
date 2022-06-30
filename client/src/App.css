@@ -879,9 +879,14 @@ nav > button {
   }
 
   #bid-table {
+
     
-   
+    text-align: left;
     border-collapse: collapse;
+    border-style: solid;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+    
     
     
   }
@@ -890,19 +895,50 @@ nav > button {
 
   #bid-table thead {
     
-    text-align: left;
+    
     height: 50px;
-    font-size: 1.2em;
-    margin-left: 100px
+    font-size: 1.4em;
+    margin-left: 100px;
+    text-align: left
 
     
   }
+ 
 
-  #bid-table th,
-  #bid-table td{
-    padding: 12px, 15px;
-    padding-left: 30px
+  #bid-table th{
+    
+    text-align: left;
+    background-color: lightgray;
+
+    
+    
+
   }
+  
+  #bid-table td{
+    
+
+    
+    
+    text-align: left;
+    min-width: 150px;
+    max-width: 150px;
+    font-size: 1.2em
+    
+  }
+ 
+
+  #bid-table-type{
+    padding-left: 20px
+  }
+  #bid-table-type-th{
+    padding-left: 20px
+  }
+
+  #bid-table img{
+    padding-left: 5px
+  }
+  
 
   #bid-table-btn{
     height: 50px;
@@ -921,21 +957,11 @@ nav > button {
 
 
 
-  #bid-amount-row{
-    padding-right: 50px
-  }
+  
 
-  .bid-table-row{
-    margin-bottom: 50px;
-    padding-top: 50px;
-    
-    
-    
-  }
+  
 
-  #bid-amount-row{
-    margin-left: 100px
-  }
+  
 
   #product-table-container{
     grid-column-start: 2;
@@ -949,24 +975,40 @@ nav > button {
   #product-table {
 
     border-collapse: collapse;
+    margin-bottom: 30px;
+    border-style: solid;
     
     
+  }
+
+  .product-table-row{
+    min-width: 150px;
+    max-width: 150px;
+    font-size: 1.1em;
+    word-wrap: break-word;
   }
 
   #product-table thead {
     
     text-align: left;
     height: 50px;
-    font-size: 1.2em
+    font-size: 1.4em;
+     background-color: lightgray;
 
     
   }
 
-  #product-table th,
-  #product-table td{
-    padding: 12px, 15px;
-    padding-left: 30px
+  #product-table-type{
+    padding-left: 20px
   }
+  #product-table-type-th{
+    padding-left: 20px
+  }
+
+  #product-table img{
+    padding-left: 5px
+  }
+
 
   #remove-listing-btn{
     border-radius: 10px;
@@ -976,6 +1018,8 @@ nav > button {
     border-color: red;
     cursor: pointer;
     font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px
     
 
 

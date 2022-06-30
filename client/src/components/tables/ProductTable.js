@@ -12,7 +12,33 @@ function ProductTable({productArray, setProductArray, handleDeleteProduct}) {
     }
     return ( 
         <div id="product-table-container">
-             <table id="product-table">
+            {productArray.map(product => {
+                return <table id="product-table" key={product.id}>
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th id="product-table-type-th">Type</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Current Bid</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="listing-table-row">
+                        <td className="product-table-row"><img className="table-image" src={product.product_image.url} alt="Product"></img></td>
+                        <td id="product-table-type" className="product-table-row">{product.part_type}</td>
+                        <td className="product-table-row">{product.brand}</td>
+                        <td className="product-table-row">{product.model}</td>
+                        <td className="product-table-row">{product.bids.length? `$${parseFloat(Math.max(...product.bids.map(bid => bid.amount)))}` : "No Bids"}</td>
+                        <td ><button id="accept-bid-btn" onClick={() => cancelProduct(product)}>Accept Bid</button></td>
+                        <td ><button id="remove-listing-btn" onClick={() => cancelProduct(product)}>Remove Listing</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            })}
+             {/* <table id="product-table">
                 <thead>
                     <tr>
                         <th></th>
@@ -38,7 +64,7 @@ function ProductTable({productArray, setProductArray, handleDeleteProduct}) {
                     </tr>
                 })}
             </table>
-            {console.log(productArray)}
+            {console.log(productArray)} */}
         </div>
 
     )
