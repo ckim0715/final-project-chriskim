@@ -26,7 +26,7 @@ function BidTable ({bidArray, handleDeleteBid}) {
                     </thead>
                     <tbody>
                         <tr>
-                        <td id="bid-table-image-row" className = "bid-table-row"><img className="table-image" src={bid.product.product_image.url} alt="Product Image"></img></td>
+                        <td id="bid-table-image-row" className = "bid-table-row"><img className="table-image" src={bid.product.image_url} alt="Product Image"></img></td>
                         <td  className="bid-table-row" id="bid-table-type">{bid.product.part_type}</td>
                         <td className="bid-table-row" id="bid-table-brand">{bid.product.brand}</td>
                         <td className="bid-table-row" id="bid-table-model">{bid.product.model}</td>

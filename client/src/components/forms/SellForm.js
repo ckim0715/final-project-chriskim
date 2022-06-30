@@ -12,7 +12,6 @@ function SellForm () {
         user_id: NaN,
         image_url: "",
         message: "",
-        product_image: null,
         })
 
         const [showImage, setShowImage] = useState(false)
@@ -37,22 +36,14 @@ function SellForm () {
 
     function handleSubmitForm(e){
         e.preventDefault();
-        let formData = new FormData();
-
-        formData.append('part_type', product.part_type);
-        formData.append('brand', product.brand);
-        formData.append('model', product.model);
-        formData.append('starting_bid', product.starting_bid);
-        formData.append('buy_price', product.buy_price);
-        formData.append('user_id', product.user_id);
-        formData.append('message', product.message);
-        formData.append('product_image', product.product_image);
-
 
         
         fetch("/product", {
             method: "POST",
-            body: formData,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(product)
         }).then ((r)=> {
             if (r.ok) {
                 r.json().then ((product)=> console.log(product));
@@ -74,11 +65,10 @@ function SellForm () {
      }
 
      function handleSetImage(e) {
-        setProduct({...product, [e.target.name]: e.target.files[0]});
-        let newImageURL = (URL.createObjectURL(e.target.files[0]));
-        setImageURL(newImageURL);
+        setProduct({...product, [e.target.name]: e.target.value});
+        setImageURL(e.target.value);
         setShowImage(true);
-        console.log(imageURL)
+       
         
  
      }
@@ -127,16 +117,15 @@ function SellForm () {
             </div>
             <div id="sellform-previewimg-container">
 
-               {showImage? <img id="sellform-image" src={imageURL}></img> : null}
+               {showImage? <img id="sellform-image" src={imageURL} alt="Preview of Product Image"></img> : null}
 
             </div>
             <div id="sellform-image-container">
-            <p>Image:</p>
+            <p>Image URL:</p>
                 <input
                 id="sellform-image-input"
-                type= "file" 
-                name= "product_image"
-                accept= "image/*"
+                type= "text" 
+                name= "image_url"
                 onChange={(e) =>handleSetImage(e)}
                 />
                 </div>

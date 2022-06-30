@@ -16,7 +16,7 @@ function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
             starting_bid: newProductData.starting_bid,
             buy_price: newProductData.buy_price,
             model: newProductData.model,
-            product_image: newProductData.product_image.url,
+            product_image: newProductData.image_url,
             message: newProductData.message,
             current_bid: maxBid(newProductData),
             id: newProductData.id
@@ -34,7 +34,7 @@ function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
 
         <div className="product-container open-modal" onClick={ () => handleOpenModal(product)}>
             <div id="product-image-container">
-        <img className="display-image" src={product.product_image.url}></img>
+        <img className="display-image" src={product.image_url}></img>
         </div>
         <div id="product-display-text-container">
         <p id="product-brand">{product.brand}</p>

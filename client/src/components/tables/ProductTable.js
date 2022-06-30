@@ -27,7 +27,7 @@ function ProductTable({productArray, setProductArray, handleDeleteProduct}) {
                     </thead>
                     <tbody>
                         <tr id="listing-table-row">
-                        <td className="product-table-row"><img className="table-image" src={product.product_image.url} alt="Product"></img></td>
+                        <td className="product-table-row"><img className="table-image" src={product.image_url} alt="Product"></img></td>
                         <td id="product-table-type" className="product-table-row">{product.part_type}</td>
                         <td className="product-table-row">{product.brand}</td>
                         <td className="product-table-row">{product.model}</td>

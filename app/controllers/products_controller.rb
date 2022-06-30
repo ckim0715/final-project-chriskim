@@ -90,7 +90,7 @@ class ProductsController < ApplicationController
     private
 
     def product_params
-        params.permit(:part_type, :brand, :model, :starting_bid, :buy_price, :user_id, :image_url, :message, :product_image)
+        params.permit(:part_type, :brand, :model, :starting_bid, :buy_price, :user_id, :image_url, :message)
     end
 
 end
