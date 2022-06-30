@@ -117,7 +117,7 @@ function SellForm () {
             </div>
             <div id="sellform-previewimg-container">
 
-               {showImage? <img id="sellform-image" src={imageURL} alt="Preview of Product Image"></img> : null}
+               {showImage? <img id="sellform-image" src={imageURL} alt="Preview of Product"></img> : null}
 
             </div>
             <div id="sellform-image-container">
