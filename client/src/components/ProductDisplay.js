@@ -36,7 +36,7 @@ function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
 
         <div className="product-container open-modal" onClick={ () => handleOpenModal(product)}>
             <div id="product-image-container">
-        <img className="display-image" src={product.image_url}></img>
+        <img className="display-image" src={product.image_url} alt="Product"></img>
         </div>
         <div id="product-display-text-container">
         <p id="product-brand">{product.brand}</p>
