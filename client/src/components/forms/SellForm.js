@@ -126,6 +126,7 @@ function SellForm () {
                 id="sellform-image-input"
                 type= "text" 
                 name= "image_url"
+                autoComplete="off"
                 onChange={(e) =>handleSetImage(e)}
                 />
                 </div>
