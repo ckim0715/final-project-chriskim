@@ -19,7 +19,7 @@ function BidForm ({productObj, setProductObj, updateCurrentBid}) {
       }, []);
 
       function updateBid (e) {
-          setBidObj({...bidObj, [e.target.name]: e.target.value})
+          setBidObj({...bidObj, [e.target.name]: e.target.value, product_id: productObj.id})
       }
 
       function bidSubmit(e) {
@@ -47,7 +47,10 @@ function BidForm ({productObj, setProductObj, updateCurrentBid}) {
 
 
     return (
+        
         <div id="bid-form-container">
+            {console.log(productObj.id)}
+            {console.log(bidObj)}
         <form onSubmit={(e) => bidSubmit(e)}>
             <div id="bid-input-container">
             <label>$

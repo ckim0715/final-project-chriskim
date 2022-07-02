@@ -177,7 +177,7 @@ function Browse({user}) {
        }
         </div>
 
-        {toggleModal && <BidModal  updateCurrentBid={updateCurrentBid} handleDeleteProduct={handleDeleteProduct} setToggleModal={setToggleModal} productObj={productObj} setProductObj={setProductObj}/>}
+        {toggleModal && <BidModal updateCurrentBid={updateCurrentBid} handleDeleteProduct={handleDeleteProduct} setToggleModal={setToggleModal} productObj={productObj} setProductObj={setProductObj}/>}
         </div>
         {console.log(productDisplay)}
         

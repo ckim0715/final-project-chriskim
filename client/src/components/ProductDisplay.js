@@ -23,6 +23,8 @@ function ProductDisplay({product, setToggleModal, setProductObj, productObj}){
 
         }))
         setToggleModal(true);
+        console.log(productObj)   
+        
         
         
         
